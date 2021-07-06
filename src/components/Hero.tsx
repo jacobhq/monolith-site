@@ -22,7 +22,7 @@ function Hero () {
                     </div>
                 </div>
                 <div className="w-full mx-auto mt-20 text-center md:w-10/12">
-                    <img src="./assets/disc.png" alt="Hellonext feedback boards software screenshot" className="w-full rounded-lg" />
+                    <img src="./disc.png" alt="Hellonext feedback boards software screenshot" className="w-full rounded-lg" />
                     <div className="absolute overlay"></div>
                 </div>
             </section>
