@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './App.css'
-import Hero from './components/Hero'
+import Hero from './components/Hero.jsx'
 
 function App() {
 
