@@ -3,26 +3,14 @@ import React, { useState } from 'react'
 //document.getElementById('disc').src = Disc
 
 function Hero() {
+    let [playing, setPlaying] = useState(false)
 
     function Play() {
-        let disc = document.querySelector('[data-disc]')
-        disc?.setAttribute('data-spinning', "true")
+        setPlaying(true)
     }
 
     function Pause() {
-        let disc = document.querySelector('[data-disc]')
-        disc?.setAttribute('data-spinning', "false")
-    }
-
-    function Toggle() {
-        let disc = document.querySelector('[data-disc]')
-        let status = disc?.getAttribute('data-spinning')
-
-        if (status = 'true') {
-            Pause()
-        } else {
-            Play()
-        }
+        setPlaying(false)
     }
 
     return (
@@ -36,16 +24,21 @@ function Hero() {
                         Monolith is a podcast about all things tech with crazy antic and a huge personality there is no other podcast like this! (Hosted by Matthew Bhatti and Jacob Marshall)
                     </p>
                     <div className="mb-4 space-x-0 md:space-x-2 md:mb-8">
-                        <a className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0 cursor-pointer" onClick={Toggle}>
+                        {playing ? <a className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0 cursor-pointer" onClick={Play}>
                             Listen now
                             <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
                             </svg>
-                        </a>
+                        </a> : <a className="inline-flex items-center justify-center w-full mb-2 btn btn-primary btn-lg sm:w-auto sm:mb-0 cursor-pointer" onClick={Pause}>
+                            Listen now
+                            <svg className="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>}
                     </div>
                 </div>
                 <div className="w-full mx-auto mt-20 text-center md:w-10/12">
-                    <img src="/disc.png" alt="Record disc" className="w-full rounded-lg" data-disc data-spinning="false" />
+                    <img src="/disc.png" alt="Record disc" className="w-full rounded-lg" id="disc" data-playing={playing ? 'true' : 'false'} />
                 </div>
             </section>
 

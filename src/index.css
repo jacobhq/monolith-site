@@ -1,8 +1,8 @@
-[data-spinning] {
+#disc {
     transition: all 0.3s linear;
 }
 
-[data-spinning="true"] {
+[data-spinning='true'] {
     animation: spin 4s linear infinite;
     filter: drop-shadow(0 0 25px #08C168);
     transform: scale(5px);
