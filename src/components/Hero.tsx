@@ -6,12 +6,12 @@ function Hero() {
 
     function Play() {
         let disc = document.querySelector('[data-disc]')
-        disc?.setAttribute('data-spinning', 'true')
+        disc?.setAttribute('data-spinning', "true")
     }
 
     function Pause() {
         let disc = document.querySelector('[data-disc]')
-        disc?.setAttribute('data-spinning', 'false')
+        disc?.setAttribute('data-spinning', "false")
     }
 
     function Toggle() {
