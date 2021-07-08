@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-//import Disc from '../disc.png'
-//document.getElementById('disc').src = Disc
 
 function Hero() {
     let [playing, setPlaying] = useState(false)
@@ -38,7 +36,7 @@ function Hero() {
                     </div>
                 </div>
                 <div className="w-full mx-auto mt-20 text-center md:w-10/12">
-                    <img src="/disc.png" alt="Record disc" className="w-full rounded-lg" id="disc" data-playing={playing ? 'true' : 'false'} />
+                    <img src="/disc.png" alt="Record disc" className="w-full rounded-lg" data-playing={playing} />
                 </div>
             </section>
 
